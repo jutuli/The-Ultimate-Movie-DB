@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { mainContext } from "../../context/MainProvider";
 import { Link } from "react-router-dom";
+import GenreBadge from "../../components/genreBadge/GenreBadge";
 
 const Detail = () => {
   const context = useContext(mainContext);
@@ -21,7 +22,11 @@ const Detail = () => {
             Users gave this movie{" "}
             <span className="font-bold">{selectedMovie.rate}</span>/10 ⭐️
           </p>
-          <p className="mb-10">Genres: {selectedMovie.genre.join(", ")}</p>
+          <div className="mb-10 flex gap-2">
+            {selectedMovie.genre.map((genre) => (
+              <GenreBadge key={genre} genre={genre} />
+            ))}
+          </div>
           <p>🗓️ This movie was released in the year {selectedMovie.year}.</p>
           <p>🎬 It was directed by {selectedMovie.director}.</p>
           <p>⏱️ The movie will take you {selectedMovie.duration} to watch.</p>
