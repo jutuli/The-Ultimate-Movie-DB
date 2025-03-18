@@ -3,9 +3,9 @@ import Sorting from "../sorting/Sorting";
 
 const Header = () => {
   return (
-    <header className="text-default mx-20 my-10 flex flex-col gap-15">
+    <header className="text-default mx-10 my-10 flex flex-col gap-15 lg:mx-20">
       <h1 className="text-center text-5xl font-bold">The Ultimate Movie DB</h1>
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
         <Search />
         <Sorting />
       </div>

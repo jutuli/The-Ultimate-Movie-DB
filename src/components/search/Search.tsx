@@ -2,7 +2,7 @@ import React from "react";
 
 const Search = () => {
   return (
-    <div className="search flex w-1/3 gap-2">
+    <div className="search w-min-auto flex gap-2 lg:w-1/3">
       <input
         type="text"
         name="search"
