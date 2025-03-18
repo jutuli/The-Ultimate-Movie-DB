@@ -7,6 +7,8 @@ export const mainContext = createContext<
       movieList: IMovie[];
       setSearchQuery: (searchQuery: string) => void;
       setSortBy: (sortBy: string) => void;
+      selectedMovie: IMovie | null;
+      setSelectedMovie: (movie: IMovie) => void;
     }
   | undefined
 >(undefined);
@@ -15,6 +17,7 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
   const [movieList, setMovieList] = useState<IMovie[]>(movies);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [sortBy, setSortBy] = useState<string>("new-to-old");
+  const [selectedMovie, setSelectedMovie] = useState<IMovie | null>(null);
 
   useEffect(() => {
     let filteredMovies = movies.filter((movie) => {
@@ -74,6 +77,8 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
           movieList,
           setSearchQuery,
           setSortBy,
+          selectedMovie,
+          setSelectedMovie,
         }}
       >
         {children}

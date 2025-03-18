@@ -1,10 +1,19 @@
 import { Link } from "react-router-dom";
 import { IMovie } from "../../interfaces/Interfaces";
 import { genreColors } from "../../utils/helpers";
+import { useContext } from "react";
+import { mainContext } from "../../context/MainProvider";
 
 const MovieCard = ({ movie }: { movie: IMovie }) => {
+  const context = useContext(mainContext);
+  if (!context) throw new Error("useContext must be inside the MainProvider");
+  const { setSelectedMovie } = context;
+
   return (
-    <Link to={`/movie/${movie.title.replace(/\s+/g, "-")}`}>
+    <Link
+      to={`/movies/${movie.title.replace(/\s+/g, "-")}`}
+      onClick={() => setSelectedMovie(movie)}
+    >
       <article
         key={movie.title}
         className="movie card card-border min-h-60 cursor-pointer shadow-sm"
