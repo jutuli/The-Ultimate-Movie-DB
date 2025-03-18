@@ -9,7 +9,7 @@ const Detail = () => {
   const { selectedMovie } = context;
 
   return (
-    <section className="movie-detail flex h-screen flex-col items-center justify-center px-10 py-10 lg:px-20">
+    <section className="movie-detail flex min-h-[calc(100vh-60px)] flex-col items-center justify-center px-10 py-10 pb-5 lg:px-20">
       {!selectedMovie && (
         <div className="flex flex-col items-center justify-center">
           <p>No movie selected.</p>
