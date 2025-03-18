@@ -20,7 +20,7 @@ const Search = () => {
 
   return (
     <form
-      className="search w-min-auto flex gap-2 lg:w-1/3"
+      className="search w-min-auto flex w-full gap-2 lg:w-1/3"
       onSubmit={handleSubmit}
     >
       <input

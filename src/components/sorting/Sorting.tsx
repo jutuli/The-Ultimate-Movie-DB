@@ -7,9 +7,9 @@ const Sorting = () => {
   const { setSortBy } = context;
 
   return (
-    <div className="sorting flex items-center justify-center">
+    <div className="sorting flex w-full items-center justify-end">
       <select
-        className="sort select"
+        className="sort select w-full md:w-auto"
         onChange={(e) => {
           setSortBy(e.target.value);
         }}
