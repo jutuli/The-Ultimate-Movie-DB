@@ -1,13 +1,6 @@
-type Movie = {
-  title: string;
-  year: string;
-  director: string;
-  duration: string;
-  genre: string[];
-  rate: string;
-};
+import { IMovie } from "../interfaces/Interfaces";
 
-const movies: Movie[] = [
+const movies: IMovie[] = [
   {
     title: "The Shawshank Redemption",
     year: "1994",
