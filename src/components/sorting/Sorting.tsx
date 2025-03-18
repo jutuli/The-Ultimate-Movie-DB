@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { mainContext } from "../../context/MainProvider";
 
 const Sorting = () => {
+  // accessing the global context to set the sort by value (sorting preference)
   const context = useContext(mainContext);
   if (!context) throw new Error("useContext must be inside the MainProvider");
   const { setSortBy } = context;

@@ -14,14 +14,20 @@ export const mainContext = createContext<
 >(undefined);
 
 const MainProvider = ({ children }: { children: React.ReactNode }) => {
+  // state to store the movie list
   const [movieList, setMovieList] = useState<IMovie[]>(movies);
+  // state to store the search query
   const [searchQuery, setSearchQuery] = useState<string>("");
+  // state to store the sort by value (default is new-to-old sorting of movies)
   const [sortBy, setSortBy] = useState<string>("new-to-old");
+  // state to store the selected movie (needed to display the movie details page)
   const [selectedMovie, setSelectedMovie] = useState<IMovie | null>(null);
 
+  // handling the search query and sort by value changes to filter and sort the movies
   useEffect(() => {
     let filteredMovies = movies.filter((movie) => {
       return (
+        // filtering the movies based on the search query (searching in title, director, genre, and year)
         movie.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         movie.director.toLowerCase().includes(searchQuery.toLowerCase()) ||
         movie.genre
@@ -32,6 +38,7 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
       );
     });
 
+    // applying the sorting based on the selected value of sort by
     switch (sortBy) {
       case "new-to-old":
         filteredMovies = filteredMovies.sort(
@@ -67,6 +74,7 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
         break;
     }
 
+    // updating the movie list state with the filtered/sorted movies
     setMovieList(filteredMovies);
   }, [searchQuery, sortBy]);
 

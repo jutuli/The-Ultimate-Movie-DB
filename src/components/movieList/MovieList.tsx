@@ -4,6 +4,7 @@ import { mainContext } from "../../context/MainProvider";
 import { IMovie } from "../../interfaces/Interfaces";
 
 const MovieList = () => {
+  // accessing the global context to get the movie list
   const { movieList } = useContext(mainContext) as { movieList: IMovie[] };
 
   return (

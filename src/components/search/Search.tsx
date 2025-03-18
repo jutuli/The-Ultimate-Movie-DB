@@ -2,19 +2,22 @@ import { useContext, useRef } from "react";
 import { mainContext } from "../../context/MainProvider";
 
 const Search = () => {
+  // accessing the global context to set the search query
   const context = useContext(mainContext);
   if (!context) throw new Error("useContext must be inside the MainProvider");
   const { setSearchQuery } = context;
 
+  // creating a reference for the input field
   const searchRef = useRef<HTMLInputElement>(null);
 
+  // function to handle the search form submission and set the search query
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const searchQuery = searchRef.current?.value;
     if (searchQuery) {
-      setSearchQuery(searchQuery);
+      setSearchQuery(searchQuery); // setting the search query in the global context
     } else {
-      setSearchQuery("");
+      setSearchQuery(""); // setting an empty string if the search query is empty (to show all movies)
     }
   };
 

@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 import GenreBadge from "../../components/genreBadge/GenreBadge";
 
 const Detail = () => {
+  // accessing the global context to get the selected movie
   const context = useContext(mainContext);
   if (!context) throw new Error("useContext must be inside the MainProvider");
   const { selectedMovie } = context;
 
   return (
     <section className="movie-detail flex flex-col items-center justify-center px-10 py-10 pb-5 lg:px-20">
+      {/* if no movie was selected (e.g. when entering a wrong url after /movies/), the userr is promted to return to the home page */}
       {!selectedMovie && (
         <div className="flex flex-col items-center justify-center">
           <p>No movie selected.</p>

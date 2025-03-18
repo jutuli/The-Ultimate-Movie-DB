@@ -5,11 +5,13 @@ import { mainContext } from "../../context/MainProvider";
 import GenreBadge from "../genreBadge/GenreBadge";
 
 const MovieCard = ({ movie }: { movie: IMovie }) => {
+  // accessing the gobal context to set the selected movie
   const context = useContext(mainContext);
   if (!context) throw new Error("useContext must be inside the MainProvider");
   const { setSelectedMovie } = context;
 
   return (
+    // clicking the card leads to the movie details page (movie title is used as the url - replacing spaces with dashes)
     <Link
       to={`/movies/${movie.title.replace(/\s+/g, "-")}`}
       onClick={() => setSelectedMovie(movie)}

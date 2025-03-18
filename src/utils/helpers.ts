@@ -1,3 +1,5 @@
+// this object is used to map movie genres to TailwindCSS colors (in order to display genre badges with different colors)
+
 export const genreColors: { [key: string]: string } = {
   Action: "lime-900",
   Adventure: "cyan-900",
