@@ -1,15 +1,16 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
+import Header from "../components/header/Header";
 
 const Layout = () => {
-  const location = useLocation();
   return (
-    <>
-      {location.pathname === "/" && <Header />}
-      <Outlet />
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <main className="grow">
+        <Outlet />
+      </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
