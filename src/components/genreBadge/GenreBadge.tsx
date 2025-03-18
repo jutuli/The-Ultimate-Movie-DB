@@ -4,7 +4,7 @@ const GenreBadge = ({ genre }: { genre: string }) => {
   return (
     <div
       key={genre}
-      className={`genre badge bg-${genreColors[genre]} min-w-fit text-white`}
+      className={`genre badge ${genreColors[genre]} min-w-fit text-white`}
     >
       {genre}
     </div>
