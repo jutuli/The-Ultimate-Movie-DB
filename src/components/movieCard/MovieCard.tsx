@@ -3,6 +3,7 @@ import { IMovie } from "../../interfaces/Interfaces";
 import { genreColors } from "../../utils/helpers";
 import { useContext } from "react";
 import { mainContext } from "../../context/MainProvider";
+import GenreBadge from "../genreBadge/GenreBadge";
 
 const MovieCard = ({ movie }: { movie: IMovie }) => {
   const context = useContext(mainContext);
@@ -28,16 +29,9 @@ const MovieCard = ({ movie }: { movie: IMovie }) => {
             <p>Duration: {movie.duration}</p>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
-            {movie.genre.map((genre) => {
-              return (
-                <div
-                  key={genre}
-                  className={`genre badge bg-${genreColors[genre]} min-w-fit text-white`}
-                >
-                  {genre}
-                </div>
-              );
-            })}
+            {movie.genre.map((genre) => (
+              <GenreBadge key={genre} genre={genre} />
+            ))}
           </div>
         </div>
       </article>
