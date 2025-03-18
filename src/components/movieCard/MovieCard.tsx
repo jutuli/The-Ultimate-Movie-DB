@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { IMovie } from "../../interfaces/Interfaces";
-import { genreColors } from "../../utils/helpers";
 import { useContext } from "react";
 import { mainContext } from "../../context/MainProvider";
 import GenreBadge from "../genreBadge/GenreBadge";
