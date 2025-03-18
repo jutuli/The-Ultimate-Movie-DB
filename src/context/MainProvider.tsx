@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { IMovie } from "../interfaces/Interfaces";
+import movies from "../data/data";
 
 export const mainContext = createContext<
   | {
@@ -10,7 +11,7 @@ export const mainContext = createContext<
 >(undefined);
 
 const MainProvider = ({ children }: { children: React.ReactNode }) => {
-  const [movieList, setMovieList] = useState<IMovie[]>([]);
+  const [movieList, setMovieList] = useState<IMovie[]>(movies);
 
   return (
     <>
