@@ -2,7 +2,7 @@ import MovieList from "../../components/movieList/MovieList";
 
 const Home = () => {
   return (
-    <section className="home mx-10 lg:mx-20">
+    <section className="home mx-10 my-10 lg:mx-20">
       <MovieList />
     </section>
   );

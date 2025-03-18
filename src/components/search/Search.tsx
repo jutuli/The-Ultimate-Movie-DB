@@ -1,5 +1,3 @@
-import React from "react";
-
 const Search = () => {
   return (
     <div className="search w-min-auto flex gap-2 lg:w-1/3">

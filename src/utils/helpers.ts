@@ -11,6 +11,7 @@ export const genreColors: { [key: string]: string } = {
   "Film-Noir": "neutral-950",
   History: "slate-600",
   Horror: "red-800",
+  Music: "orange-900",
   Musical: "teal-800",
   Mystery: "amber-600",
   Romance: "pink-800",
