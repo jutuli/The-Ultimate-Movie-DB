@@ -13,6 +13,12 @@
 
 ---
 
+### 🔗 **Live Demo**
+
+➡️ **Check out the project live here:** [The Ultimate Movie DB](https://the-ultimate-movie-db.vercel.app/) 🚀
+
+---
+
 ## 🚀 Features
 
 ✅ **Home Page** – Displays a grid of movies with quick access to details.  
