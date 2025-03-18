@@ -26,6 +26,7 @@ const MovieCard = ({ movie }: { movie: IMovie }) => {
               Director: <span className="font-bold">{movie.director}</span>
             </p>
             <p>Duration: {movie.duration}</p>
+            <p>Rating: {movie.rate} / 10</p>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
             {movie.genre.map((genre) => (
